@@ -4,5 +4,9 @@
     <string name="app_name">Knit Wit</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="view_stitches">View Stitches</string>
+    <string name="count_rows">Pattern Row Counter</string>
+    <string name="title_activity_row_counter">Row Counter</string>
 
 </resources>

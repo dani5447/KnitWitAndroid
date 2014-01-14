@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.knitwit.RowCounter"
+            android:label="@string/title_activity_row_counter"
+            android:parentActivityName="com.example.knitwit.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.knitwit.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
