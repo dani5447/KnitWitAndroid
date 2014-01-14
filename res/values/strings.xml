@@ -8,5 +8,8 @@
     <string name="view_stitches">View Stitches</string>
     <string name="count_rows">Pattern Row Counter</string>
     <string name="title_activity_row_counter">Row Counter</string>
+    <string name="zero">Zero Counter</string>
+    <string name="increment_row">+1</string>
+    <string name="decrement_row">-1</string>
 
 </resources>
