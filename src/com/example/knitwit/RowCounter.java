@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class RowCounter extends Activity {
@@ -35,10 +36,13 @@ public class RowCounter extends Activity {
 	    setContentView(R.layout.activity_row_counter);
     }
 	
-	/*public void incrementCounter(View view){
+	public void incrementCounter(View view){
 		//Intent intent = new Intent(this, RowCounter.class);
+		//final TextView FinalCount = (TextView) findViewById(R.id.counter_number);
+	    
+	    //FinalCount.setText("3");
 	}
-	*/
+	
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.

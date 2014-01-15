@@ -15,13 +15,17 @@
         android:text="@string/counter_text"
 	    android:textSize="30sp" 
 	    android:layout_marginTop="100sp"
-	    android:layout_marginBottom="50sp" />
+	    android:layout_marginBottom="50sp" 
+	    android:layout_marginRight="35sp"/>
     
-    <!-- <TextView 
-        android:id="@+id/counterNumber"
-        android:textSize="30sp"
-        android:layout_toRightOf="@+id/text"
-        android:text="@string/counter_number"  /> -->
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/counter_number"
+	    android:textSize="60sp" 
+	    android:layout_toRightOf="@+id/text"
+	    android:layout_alignBaseline="@+id/text"/>
     
     <Button
 	    android:id="@+id/increment"
@@ -29,9 +33,10 @@
 	    android:layout_height="wrap_content"
 	    android:text="@string/increment_row"
 	    android:textSize="35sp"
-	    android:layout_toRightOf="@+id/zero" 
-	    android:onClick="incrementCounter" 
-	    android:layout_centerVertical="true"/>
+	    android:layout_toRightOf="@+id/zero"
+	    android:layout_centerVertical="true" 
+	    android:onClick="incrementCounter"/>
+	    
 
     <Button
 	    android:id="@+id/decrement"
