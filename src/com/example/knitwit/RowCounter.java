@@ -25,12 +25,12 @@ public class RowCounter extends Activity {
 	    //Intent intent = getIntent();
 
 	    // Create the text view
-	    TextView textView = new TextView(this);
-	    textView.setTextSize(40);
-	    textView.setText("" + 0);
+	    //TextView textView = new TextView(this);
+	    //textView.setTextSize(40);
+	    //textView.setText("" + 0);
 	    
 	    //set the background of the text view 
-	    textView.setBackgroundResource(R.drawable.background3);
+	    //textView.setBackgroundResource(R.drawable.background3);
 	    
 	    //and set your layout like main content
 	    setContentView(R.layout.activity_row_counter);
