@@ -1,41 +1,55 @@
-<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".RowCounter" > -->
-    
+
 <!-- <?xml version="1.0" encoding="utf-8"?> -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@drawable/background3">
-    
-    
-    <!-- <TextView
+    android:background="@drawable/background3"
+    tools:context=".RowCounter" >
+        
+    <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" /> -->
-        
+        android:text="@string/counter_text"
+	    android:textSize="30sp" 
+	    android:layout_marginTop="100sp"
+	    android:layout_marginBottom="50sp" />
+    
+    <!-- <TextView 
+        android:id="@+id/counterNumber"
+        android:textSize="30sp"
+        android:layout_toRightOf="@+id/text"
+        android:text="@string/counter_number"  /> -->
+    
     <Button
+	    android:id="@+id/increment"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:text="@string/increment_row" />
-	    <!-- android:onClick="countRows" /> -->
-    <Button
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/decrement_row" />
-	    <!-- android:onClick="countRows" /> -->
-	<Button
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/zero" />
-	    <!-- android:onClick="countRows" /> -->
+	    android:text="@string/increment_row"
+	    android:textSize="35sp"
+	    android:layout_toRightOf="@+id/zero" 
+	    android:onClick="incrementCounter" 
+	    android:layout_centerVertical="true"/>
 
-</LinearLayout>
+    <Button
+	    android:id="@+id/decrement"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/decrement_row"
+	    android:textSize="35sp"
+	    android:layout="@+id/zero"
+	    android:layout_toLeftOf="@+id/zero"
+	    android:layout_centerVertical="true"/>
+
+	<Button
+	    android:id="@+id/zero"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/zero"
+	    android:layout_below="@+id/decrement"
+	    android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

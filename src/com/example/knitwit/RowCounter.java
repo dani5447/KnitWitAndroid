@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class RowCounter extends Activity {
@@ -17,20 +20,25 @@ public class RowCounter extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 	    // Get the message from the intent
-	    Intent intent = getIntent();
-	    //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+	    //Intent intent = getIntent();
 
 	    // Create the text view
 	    TextView textView = new TextView(this);
 	    textView.setTextSize(40);
-	    textView.setText("Current Row Number:  ");
+	    textView.setText("" + 0);
 	    
-
-	    // Set the text view as the activity layout
-	    setContentView(textView);
+	    //set the background of the text view 
+	    textView.setBackgroundResource(R.drawable.background3);
+	    
+	    //and set your layout like main content
+	    setContentView(R.layout.activity_row_counter);
     }
+	
+	/*public void incrementCounter(View view){
+		//Intent intent = new Intent(this, RowCounter.class);
+	}
+	*/
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.

@@ -11,5 +11,7 @@
     <string name="zero">Zero Counter</string>
     <string name="increment_row">+1</string>
     <string name="decrement_row">-1</string>
+    <string name="counter_text">Current Row Count: </string>
+    <string name="counter_number">0</string>
 
 </resources>
