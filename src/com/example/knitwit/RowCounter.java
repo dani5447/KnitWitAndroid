@@ -23,7 +23,7 @@ public class RowCounter extends Activity {
 		super.onCreate(savedInstanceState);
 	    // Get the message from the intent
 	    //Intent intent = getIntent();
-
+		
 	    // Create the text view
 	    //TextView textView = new TextView(this);
 	    //textView.setTextSize(40);
