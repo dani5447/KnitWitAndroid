@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Knit Wit</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="view_stitches">View Stitches</string>
+    <string name="count_rows">Pattern Row Counter</string>
+    <string name="title_activity_row_counter">Row Counter</string>
+    <string name="zero">Reset Counter</string>
+    <string name="increment_row">+1</string>
+    <string name="decrement_row">-1</string>
+    <string name="counter_text">Current Row #: </string>
+    <string name="counter_number">0</string>
+
+</resources>
