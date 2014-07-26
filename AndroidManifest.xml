@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.knitwit.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.knitwit.RowCounter"
-            android:label="@string/title_activity_row_counter"
-            android:parentActivityName="com.example.knitwit.MainActivity" >
+            android:name=".RowCounter"
+            android:label="@string/count_rows"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.knitwit.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FindLocalDonationActivity"
+            android:label="@string/title_activity_find_local_donation"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.knitwit.MainActivity" />

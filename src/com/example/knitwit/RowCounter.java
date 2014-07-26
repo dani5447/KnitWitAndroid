@@ -1,47 +1,71 @@
 package com.example.knitwit;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 public class RowCounter extends Activity {
-
-	@SuppressLint("NewApi")
+	private int currentCounter; //Contains value of current row number in counters
+	private TextView rowCountText; //Holds the row count on UI
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	    // Get the message from the intent
-	    //Intent intent = getIntent();
-	    // Create the text view
-	    //TextView textView = new TextView(this);
-	    //textView.setTextSize(40);
-	    //textView.setText("" + 0);
-	    
-	    //set the background of the text view 
-	    //textView.setBackgroundResource(R.drawable.background3);
-	    
-	    //and set your layout like main content
-	    setContentView(R.layout.activity_row_counter);
+		setContentView(R.layout.activity_row_counter);
+		
+		rowCountText = (TextView) findViewById(R.id.counter_number);
+		
+		if(rowCountText.getText()==null){
+			currentCounter = 0;
+			rowCountText.setText("" + currentCounter);
+		}
+			
+	    //Register event listener for incrementing row number
+		TextView incrementButton = (TextView)findViewById(R.id.increment);
+		incrementButton.setOnClickListener(incrementButtonListener);
+		
+		//Register event listener for decrementing row number
+		TextView decrementButton = (TextView)findViewById(R.id.decrement);
+		decrementButton.setOnClickListener(decrementButtonListener);
+		
+		//Register event listener for zeroing row number
+		TextView zeroButton = (TextView)findViewById(R.id.zero);
+		zeroButton.setOnClickListener(zeroButtonListener);		
     }
 	
-	public void incrementCounter(View view){
-		//Intent intent = new Intent(this, RowCounter.class);
-		//final TextView FinalCount = (TextView) findViewById(R.id.counter_number);
-	    
-	    //FinalCount.setText("3");
-	}
+	public OnClickListener incrementButtonListener = new OnClickListener(){
+		@Override
+		public void onClick(View v){
+			currentCounter++;
+			rowCountText.setText("" + currentCounter);
+		}
+	};
 	
+	public OnClickListener decrementButtonListener = new OnClickListener(){
+		@Override
+		public void onClick(View v){
+			//Do not decrement counter below 0
+			if(currentCounter-1 <0){
+				currentCounter = 0;
+			}else{
+				currentCounter--;
+			}
+			rowCountText.setText("" + currentCounter);
+		}
+	};
+	
+	public OnClickListener zeroButtonListener = new OnClickListener(){
+		@Override
+		public void onClick(View v){
+			currentCounter = 0;
+			rowCountText.setText("" + currentCounter);
+		}
+	};
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -59,22 +83,4 @@ public class RowCounter extends Activity {
 		getMenuInflater().inflate(R.menu.row_counter, menu);
 		return true;
 	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			// This ID represents the Home or Up button. In the case of this
-			// activity, the Up button is shown. Use NavUtils to allow users
-			// to navigate up one level in the application structure. For
-			// more details, see the Navigation pattern on Android Design:
-			//
-			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
-			//
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
 }

@@ -4,57 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/background3"
+    android:orientation="vertical"
     tools:context=".RowCounter" >
-        
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/counter_text"
-	    android:textSize="30sp" 
-	    android:layout_marginTop="100sp"
-	    android:layout_marginBottom="50sp" 
-	    android:layout_marginRight="35sp"/>
-    
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/counter_number"
-	    android:textSize="60sp" 
-	    android:layout_toRightOf="@+id/text"
-	    android:layout_alignBaseline="@+id/text"/>
-    
-    <Button
+
+	<TextView
+	    android:id="@+id/counter_text"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/decrement"
+	    android:layout_alignRight="@+id/zero"
+	    android:layout_marginBottom="56dp"
+	    android:text="@string/counter_text"
+	    android:textSize="30sp" />
+
+	<TextView
+	    android:id="@+id/counter_number"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/increment"
+	    android:layout_marginBottom="36dp"
+	    android:layout_toRightOf="@+id/increment"
+	    android:contentDescription=""
+	    android:text="@string/counter_number"
+	    android:textSize="60sp" />
+
+	<Button
 	    android:id="@+id/increment"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/counter_text"
+	    android:layout_marginLeft="63dp"
+	    android:layout_toRightOf="@+id/decrement"
+	    android:onClick="incrementCounter"
 	    android:text="@string/increment_row"
-	    android:textSize="35sp"
-	    android:layout_toRightOf="@+id/zero"
-	    android:layout_centerVertical="true" 
-	    android:onClick="incrementCounter"/>
-	    
+	    android:textSize="35sp" />
 
-    <Button
+	<Button
 	    android:id="@+id/decrement"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:text="@string/decrement_row"
-	    android:textSize="35sp"
+	    android:layout_alignLeft="@+id/counter_text"
+	    android:layout_centerVertical="true"
+	    android:layout_marginLeft="34dp"
 	    android:layout="@+id/zero"
-	    android:layout_toLeftOf="@+id/zero"
-	    android:layout_centerVertical="true"/>
+	    android:text="@string/decrement_row"
+	    android:textSize="35sp" />
 
 	<Button
 	    android:id="@+id/zero"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:text="@string/zero"
-	    android:layout_below="@+id/decrement"
-	    android:layout_centerHorizontal="true" />
-
+	    android:layout_below="@+id/increment"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="45dp"
+	    android:text="@string/zero_counter" />
 
 </RelativeLayout>
