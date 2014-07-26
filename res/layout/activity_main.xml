@@ -23,7 +23,6 @@
 	    android:layout_below="@+id/count_rows"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="25dp"
-	    android:onClick=""
 	    android:text="@string/pattern_organizer"
 	    android:textSize="30sp" />
 
@@ -34,7 +33,6 @@
 	    android:layout_below="@+id/pattern_organizer"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="25dp"
-	    android:onClick=""
 	    android:text="@string/pattern_vizualizer"
 	    android:textSize="30sp" />
 
@@ -56,7 +54,6 @@
 	    android:layout_below="@+id/find_local_donation_centers"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="25dp"
-	    android:onClick=""
 	    android:text="@string/track_donations"
 	    android:textSize="30sp" />
 	

@@ -20,6 +20,10 @@ public class FindLocalDonationActivity extends Activity{
 	private int zipcode;
 	private EditText zipcodeInput;
 	private boolean isValidZipcode;
+	
+	//static search base URLs
+	private static String baseSalvationArmySearchURL = "http://satruck.org/search/results?q=";
+	private static String baseChruchSearchURL = "http://www.whitepages.com/business?utf8=%E2%9C%93&key=Churches&where=";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,21 @@ public class FindLocalDonationActivity extends Activity{
 		zipcodeInput = (EditText)findViewById(R.id.zipcodeInput);
 		zipcodeInput.addTextChangedListener(zipCodeWatcher);
 		
-		//Listen for click on salvation army button
+		//Listen for click on salvation army search button
 		Button salvationArmyButton = (Button)findViewById(R.id.findSalvationArmy);
 		salvationArmyButton.setOnClickListener(salvationArmyClickListener);
+		
+		//Listen for click on church search button
+		Button churchButton = (Button)findViewById(R.id.findLocalChurches);
+		churchButton.setOnClickListener(churchSearchClickListener);
 	}
 	
+	/**
+	 * A listener for the zipcode entry field. After text change, does simple validation on
+	 * zipcode and saves result to private variable for later.
+	 * 
+	 * @category listener
+	 */
 	public TextWatcher zipCodeWatcher = new TextWatcher(){
 		public void afterTextChanged(Editable s){
 			String tempZipcode = zipcodeInput.getText().toString();
@@ -49,13 +63,38 @@ public class FindLocalDonationActivity extends Activity{
 		public void onTextChanged(CharSequence s, int start, int before, int count){}
 	};
 	
+	/**
+	 * A listener for the button to search for local salvation army. Uses a base URL plus user entered
+	 * and validated zipcode to search for churches. Shows a toast if zipcode is invalid.
+	 * 
+	 * @category listener
+	 */
 	public OnClickListener salvationArmyClickListener = new OnClickListener(){
 		@Override
 		public void onClick(View v){
-			Log.i("zipCodeWatcher", "Valid Zipcode is " + isValidZipcode);
 			if(isValidZipcode){
 				zipcode = Integer.parseInt(zipcodeInput.getText().toString());
-				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://satruck.org/search/results?q=" + zipcode));
+				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(baseSalvationArmySearchURL + zipcode));
+				startActivity(browserIntent);
+			} else{
+				Toast.makeText(getApplicationContext(), "Zipcode is invalid. Please input valid zipcode.", 
+						Toast.LENGTH_SHORT).show();
+			}
+		}
+	};
+	
+	/**
+	 * A listener for the button to search for local churches. Uses a base URL plus user entered
+	 * and validated zipcode to search for churches. Shows a toast if zipcode is invalid.
+	 * 
+	 * @category listener
+	 */
+	public OnClickListener churchSearchClickListener = new OnClickListener(){
+		@Override
+		public void onClick(View v){
+			if(isValidZipcode){
+				zipcode = Integer.parseInt(zipcodeInput.getText().toString());
+				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(baseChruchSearchURL + zipcode));
 				startActivity(browserIntent);
 			} else{
 				Toast.makeText(getApplicationContext(), "Zipcode is invalid. Please input valid zipcode.", 

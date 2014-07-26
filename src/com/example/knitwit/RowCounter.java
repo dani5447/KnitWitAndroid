@@ -38,6 +38,11 @@ public class RowCounter extends Activity {
 		zeroButton.setOnClickListener(zeroButtonListener);		
     }
 	
+    /**
+	 * A listener for the increment button.
+	 * 
+	 * @category listener
+	 */
 	public OnClickListener incrementButtonListener = new OnClickListener(){
 		@Override
 		public void onClick(View v){
@@ -46,6 +51,11 @@ public class RowCounter extends Activity {
 		}
 	};
 	
+	/**
+	 * A listener for the decrement button.
+	 * 
+	 * @category listener
+	 */
 	public OnClickListener decrementButtonListener = new OnClickListener(){
 		@Override
 		public void onClick(View v){
@@ -59,6 +69,11 @@ public class RowCounter extends Activity {
 		}
 	};
 	
+	/**
+	 * A listener for the reset counter button.
+	 * 
+	 * @category listener
+	 */
 	public OnClickListener zeroButtonListener = new OnClickListener(){
 		@Override
 		public void onClick(View v){

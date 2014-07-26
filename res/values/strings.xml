@@ -16,6 +16,7 @@
     <string name="enter_zipcode">Please enter\nZipCode: </string>
     <string name="zipcode">ZipCode</string>
     <string name="local_salvation_army">Find Salvation Army</string>
+    <string name="find_local_churches">Find Local Churches</string>
     
     <string name="track_donations">Track Donations</string>
     
