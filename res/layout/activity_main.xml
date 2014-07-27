@@ -9,52 +9,64 @@
 	    android:id="@+id/count_rows"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentTop="true"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="20dp"
+	    android:layout_marginLeft="14dp"
+	    android:layout_marginTop="23dp"
 	    android:onClick="countRows"
 	    android:text="@string/count_rows"
-	    android:textSize="30sp" />
+	    android:textSize="25sp" />
 
 	<Button
 	    android:id="@+id/pattern_organizer"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/count_rows"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="25dp"
+	    android:layout_alignLeft="@+id/stitch_dictionary"
+	    android:layout_below="@+id/stitch_dictionary"
+	    android:layout_marginTop="14dp"
 	    android:text="@string/pattern_organizer"
-	    android:textSize="30sp" />
+	    android:textSize="25sp" />
+
+	<Button
+	    android:id="@+id/stitch_dictionary"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/count_rows"
+	    android:layout_below="@+id/count_rows"
+	    android:layout_marginTop="14dp"
+	    android:onClick="stitchDictionary"
+	    android:text="@string/stitch_dictionary"
+	    android:textSize="25sp" />
 
 	<Button
 	    android:id="@+id/pattern_vizualizer"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/pattern_organizer"
 	    android:layout_below="@+id/pattern_organizer"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="25dp"
+	    android:layout_marginTop="18dp"
 	    android:text="@string/pattern_vizualizer"
-	    android:textSize="30sp" />
+	    android:textSize="25sp" />
 
 	<Button
 	    android:id="@+id/find_local_donation_centers"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/pattern_vizualizer"
 	    android:layout_below="@+id/pattern_vizualizer"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="25dp"
+	    android:layout_marginTop="18dp"
 	    android:onClick="findDonationCenters"
 	    android:text="@string/title_activity_find_local_donation"
-	    android:textSize="30sp" />
+	    android:textSize="25sp" />
 
 	<Button
 	    android:id="@+id/track_donations"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/find_local_donation_centers"
 	    android:layout_below="@+id/find_local_donation_centers"
-	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="25dp"
+	    android:layout_marginTop="17dp"
 	    android:text="@string/track_donations"
-	    android:textSize="30sp" />
+	    android:textSize="25sp" />
 	
 </RelativeLayout>

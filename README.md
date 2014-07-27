@@ -9,7 +9,7 @@ Planned Functionality: (last updated 07/26/2014)
   
   -A section off of the main menu to find local donation sites 
   	(Done)-salvation army
-  	-goodwill
+  	-goodwill?
   	(Done)-churches
   	...
 
