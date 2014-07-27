@@ -27,8 +27,8 @@ public class MainActivity extends Activity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    switch (item.getItemId()) {
-	    case R.id.action_about:
+	    int itemId = item.getItemId();
+	    if(itemId ==  R.id.action_about){
 	        // About option clicked. Show about in alert dialog.
 	    	//TODO - If there's more app info later, convert to new page
 	    	AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
@@ -38,18 +38,18 @@ public class MainActivity extends Activity {
 						"\nRecent Version Updates: None"); //TODO - add contact email
 			alertDialog.show();
 	        return true;
-	    case R.id.action_exit:
+	    } else if (itemId ==R.id.action_exit){
 	        // Exit option clicked.
 	    	Log.i("MainActivity.onOptionsItemSelected", "Exit clicked");
 	    	Process.killProcess(Process.myPid()); 
 	        return true;
-	    case R.id.action_settings:
+	    } else if (itemId == R.id.action_settings){
 	        // Settings option clicked. TODO
 	        return true;
-	    case R.id.action_change_background:
+	    } else if (itemId ==R.id.action_change_background){
 	        // Change Background option clicked. TODO
 	        return true;
-	    default:
+	    } else{
 	        return super.onOptionsItemSelected(item);
 	    }
 	}
