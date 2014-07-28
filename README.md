@@ -37,6 +37,8 @@ Planned Functionality: (last updated 07/26/2014)
   		-Manual options would have a title, freetype box for the pattern, and picture (access camera/camera roll)
   		-Pattern by URL would have a title, the URL (onclick take user to the URL), and picture from the URL (similar to how a user choses a picture when uploading a pinterest pin)
 
+  -Provide localization
 
+  -Provide/support portrait and landscape orientations
   
 More to come as the software develops.
