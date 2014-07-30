@@ -1,5 +1,7 @@
 package com.example.knitwit;
 
+import com.example.knitwit.R;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;

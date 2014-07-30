@@ -1,5 +1,7 @@
 package com.example.knitwit;
 
+import com.example.knitwit.R;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;

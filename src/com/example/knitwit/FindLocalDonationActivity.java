@@ -1,5 +1,7 @@
 package com.example.knitwit;
 
+import com.example.knitwit.R;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,8 +24,8 @@ public class FindLocalDonationActivity extends Activity{
 	private boolean isValidZipcode;
 	
 	//static search base URLs
-	private static String baseSalvationArmySearchURL = "http://satruck.org/search/results?q=";
-	private static String baseChruchSearchURL = "http://www.whitepages.com/business?utf8=%E2%9C%93&key=Churches&where=";
+	public static String baseSalvationArmySearchURL = "http://satruck.org/search/results?q=";
+	public static String baseChruchSearchURL = "http://www.whitepages.com/business?utf8=%E2%9C%93&key=Churches&where=";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

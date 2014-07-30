@@ -1,5 +1,7 @@
 package com.example.knitwit;
 
+import com.example.knitwit.R;
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
