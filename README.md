@@ -3,13 +3,13 @@ KnitWit
 
 A knitting manager application. 
 
-Planned Functionality: (last updated 07/26/2014)
+Planned Functionality : (last updated 07/31/2014)
 
-  (Done) 1. A section off of the main menu to count rows completed when knitting a pattern.
+  1. (Done) A section off of the main menu to count rows completed when knitting a pattern.
   
-  (Done) 2. A section off of the main menu to find local donation sites 
-  	* salvation army
-  	* churches
+  2. (Done) A section off of the main menu to find local donation sites
+  	* Salvation Army
+  	* Churches
 
   3. A section off of the main menu to view different stitches. Clicking a stich name from this list will
   then lead to a page showing the steps to complete the stitch. (aka Stitch Dictionary) (Since there are so many stitches, this will be a large work in progress)
@@ -40,3 +40,9 @@ Planned Functionality: (last updated 07/26/2014)
   10. Unit/Functional/UI testing
   
 More to come as the software develops.
+
+Technology used:
+* Android ADT
+* Robolectric
+
+Technology will be updated as more are added.
