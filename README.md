@@ -42,10 +42,9 @@ Planned Functionality : (last updated 07/31/2014)
 More to come as the software develops.
 
 Technology used:
-* Android ADT
+* Eclipse ADT (Android Development Tools) Plugin
 * Robolectric
 * ProGuard
 * various libaries from Android SDK manager
-* 
 
 Technology will be updated as more are added.
