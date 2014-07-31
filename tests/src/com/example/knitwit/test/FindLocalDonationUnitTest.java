@@ -14,6 +14,7 @@ import com.example.knitwit.R;
  * @author drn
  *
  */
+@RunWith(RobolectricTestRunner.class) //Required to run test with Robolectric
 public class FindLocalDonationUnitTest extends
 ActivityUnitTestCase<FindLocalDonationActivity> {
 

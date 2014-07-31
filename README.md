@@ -5,11 +5,11 @@ A knitting manager application.
 
 Planned Functionality : (last updated 07/31/2014)
 
-  1. (Done) A section off of the main menu to count rows completed when knitting a pattern.
+  1. ~~A section off of the main menu to count rows completed when knitting a pattern.~~
   
-  2. (Done) A section off of the main menu to find local donation sites
-  	* Salvation Army
-  	* Churches
+  2. ~~A section off of the main menu to find local donation sites~~
+  	* ~~Salvation Army~~
+  	* ~~Churches~~
 
   3. A section off of the main menu to view different stitches. Clicking a stich name from this list will
   then lead to a page showing the steps to complete the stitch. (aka Stitch Dictionary) (Since there are so many stitches, this will be a large work in progress)
@@ -25,7 +25,7 @@ Planned Functionality : (last updated 07/31/2014)
 
   5. A section off of the main menu to track past donations
 
-  6. A login page
+  6. *~~A login page~~ *Deprecated- login will be through requested through Google Drive at app startup 
 
   7. Section for user to set unique options/settings
   	* A page on the donation tracking page to show a sort of 'scoreboard' and/or the user who donated the most in the past month (a sort of monthy featured/commemorated user)
@@ -44,5 +44,8 @@ More to come as the software develops.
 Technology used:
 * Android ADT
 * Robolectric
+* ProGuard
+* various libaries from Android SDK manager
+* 
 
 Technology will be updated as more are added.
