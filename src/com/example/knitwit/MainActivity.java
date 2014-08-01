@@ -4,25 +4,26 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.drive.Drive;
-import com.google.android.gms.drive.DriveFolder.DriveFolderResult;
+import com.google.android.gms.plus.Plus;
 
-public class MainActivity extends Activity {	
+public class MainActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener {	
 	
-	private GoogleApiClient mGoogleApiClient;
+	public static GoogleApiClient mGoogleApiClient;
 	private int RESOLVE_CONNECTION_REQUEST_CODE;
 	
 	@Override
@@ -35,8 +36,8 @@ public class MainActivity extends Activity {
 		mGoogleApiClient = new GoogleApiClient.Builder(this)
 	            .addApi(Drive.API)
 	            .addScope(Drive.SCOPE_FILE)
-	            .addConnectionCallbacks((ConnectionCallbacks) this)
-	            .addOnConnectionFailedListener((OnConnectionFailedListener) this)
+	            .addConnectionCallbacks(this)
+	            .addOnConnectionFailedListener(this)
 	            .build();
 		//Attempt to connect to google client
 		onStart();
@@ -51,6 +52,30 @@ public class MainActivity extends Activity {
 	    mGoogleApiClient.connect();
 	}
 
+	@Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
+	
+	@Override
+	public void onConnected(Bundle arg0) {
+		// TODO Auto-generated method stub
+		// Connected to Google Play services!
+        // The good stuff goes here.
+		Toast.makeText(MainActivity.this, 
+	              "Successfully connected to Google account", Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onConnectionSuspended(int cause) {
+		// TODO Auto-generated method stub
+		// The connection has been interrupted.
+        // Disable any UI components that depend on Google APIs
+        // until onConnected() is called.
+
+	}
+	
 	/*
 	 * Called if the mGoogleApiClient.connect() fails. (User has not previously
 	 *  authorized permission)
@@ -60,7 +85,10 @@ public class MainActivity extends Activity {
 	        try {
 	            connectionResult.startResolutionForResult(this, RESOLVE_CONNECTION_REQUEST_CODE);
 	        } catch (IntentSender.SendIntentException e) {
-	            //TODO Unable to resolve, message user appropriately
+	            // Unable to resolve, message user appropriately
+	        	Log.wtf("MainActivity.onActivityResult", "Could not connect to Google account." + e);
+	        	Toast.makeText(MainActivity.this, 
+	  	              "Could not connect to Google account.", Toast.LENGTH_SHORT).show();
 	        }
 	    } else {
 	        GooglePlayServicesUtil.getErrorDialog(connectionResult.getErrorCode(), this, 0).show();
@@ -76,26 +104,17 @@ public class MainActivity extends Activity {
 	        if (resultCode == RESULT_OK) {
 	           mGoogleApiClient.connect();
 	        } else{
-	        	//TODO write error message
+	        	Log.e("MainActivity.onActivityResult", "Could not connect to Google account.");
+	        	Toast.makeText(MainActivity.this, 
+	  	              "Could not connect to Google account.", Toast.LENGTH_SHORT).show();
 	        }
 	    }
 	}
-
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
-		
-		//Show/hide Log in/Log out based on current status
-		View login = findViewById(R.id.action_log_in);
-		View logout = findViewById(R.id.action_log_out);
-		if(login.getVisibility()==View.VISIBLE){
-			logout.setVisibility(View.GONE);
-		} else{
-			logout.setVisibility(View.VISIBLE);
-			login.setVisibility(View.GONE);
-		}
 		return true;
 	}
 	
@@ -119,16 +138,20 @@ public class MainActivity extends Activity {
 	        return true;
 	    } else if (itemId == R.id.action_settings){
 	        // Settings option clicked. TODO
+	    	Toast.makeText(MainActivity.this, 
+	  	              "clicked settings", Toast.LENGTH_SHORT).show();
 	        return true;
 	    } else if (itemId ==R.id.action_change_background){
 	        // Change Background option clicked. TODO
+	    	Toast.makeText(MainActivity.this, 
+  	              "clicked background", Toast.LENGTH_SHORT).show();
 	        return true;
 	    } else{
 	        return super.onOptionsItemSelected(item);
 	    }
 	}
 	
-	ResultCallback<DriveFolderResult> folderCreatedCallback = new
+/*	ResultCallback<DriveFolderResult> folderCreatedCallback = new
             ResultCallback<DriveFolderResult>() {
         @Override
         public void onResult(DriveFolderResult result) {
@@ -139,7 +162,11 @@ public class MainActivity extends Activity {
             Log.i("MainActivity.folderCreatedCallback", "Successfully created folder " + 
             		result.getDriveFolder().getDriveId() + " in Google Drive account");
         }
-    };
+    };*/
+	
+	public static GoogleApiClient getGoogleApiClient(){
+		return mGoogleApiClient;
+	}
 	
 	public void countRows(View view){
 		Intent intent = new Intent(this, RowCounter.class);
@@ -153,6 +180,11 @@ public class MainActivity extends Activity {
 	
 	public void stitchDictionary(View view){
 		Intent intent = new Intent(this, StitchDictionaryActivity.class);
+		startActivity(intent);
+	}
+	
+	public void trackDonations(View view){
+		Intent intent = new Intent(this, TrackDonationsActivity.class);
 		startActivity(intent);
 	}
 }

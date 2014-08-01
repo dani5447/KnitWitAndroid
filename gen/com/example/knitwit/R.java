@@ -415,13 +415,11 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020021;
     }
     public static final class id {
-        public static final int action_about=0x7f07002c;
-        public static final int action_change_background=0x7f070029;
-        public static final int action_example=0x7f07002e;
-        public static final int action_exit=0x7f07002d;
-        public static final int action_log_in=0x7f07002a;
-        public static final int action_log_out=0x7f07002b;
-        public static final int action_settings=0x7f070028;
+        public static final int action_about=0x7f07002b;
+        public static final int action_change_background=0x7f07002a;
+        public static final int action_example=0x7f07002d;
+        public static final int action_exit=0x7f07002c;
+        public static final int action_settings=0x7f070029;
         public static final int book_now=0x7f070010;
         public static final int button1=0x7f070017;
         public static final int buyButton=0x7f07000a;
@@ -434,6 +432,7 @@ containing a value of this type.
         public static final int counter_text=0x7f07001f;
         public static final int decrement=0x7f070020;
         public static final int drawer_layout=0x7f070024;
+        public static final int emailRecords=0x7f070027;
         public static final int findLocalChurches=0x7f070015;
         public static final int findSalvationArmy=0x7f070014;
         public static final int find_local_donation_centers=0x7f07001d;
@@ -452,7 +451,7 @@ containing a value of this type.
         public static final int production=0x7f070007;
         public static final int sandbox=0x7f070008;
         public static final int satellite=0x7f070002;
-        public static final int section_label=0x7f070027;
+        public static final int section_label=0x7f070028;
         public static final int selectionDetails=0x7f07000b;
         public static final int stitch_dictionary=0x7f07001b;
         public static final int strict_sandbox=0x7f070009;
@@ -471,8 +470,9 @@ containing a value of this type.
         public static final int activity_main=0x7f030001;
         public static final int activity_row_counter=0x7f030002;
         public static final int activity_stitch_dictionary=0x7f030003;
-        public static final int fragment_navigation_drawer=0x7f030004;
-        public static final int fragment_stitch_dictionary=0x7f030005;
+        public static final int activity_track_donations=0x7f030004;
+        public static final int fragment_navigation_drawer=0x7f030005;
+        public static final int fragment_stitch_dictionary=0x7f030006;
     }
     public static final class menu {
         public static final int find_local_donation=0x7f0a0000;
@@ -480,14 +480,13 @@ containing a value of this type.
         public static final int main=0x7f0a0002;
         public static final int row_counter=0x7f0a0003;
         public static final int stitch_dictionary=0x7f0a0004;
+        public static final int track_donations=0x7f0a0005;
     }
     public static final class string {
         public static final int action_about=0x7f050022;
         public static final int action_change_background=0x7f050023;
-        public static final int action_example=0x7f05003c;
+        public static final int action_example=0x7f05003a;
         public static final int action_exit=0x7f050024;
-        public static final int action_log_in=0x7f050025;
-        public static final int action_log_out=0x7f050026;
         public static final int action_settings=0x7f050021;
         public static final int app_name=0x7f050020;
         public static final int auth_client_needs_enabling_title=0x7f050001;
@@ -585,31 +584,33 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f05001e;
-        public static final int count_rows=0x7f050027;
-        public static final int counter_number=0x7f05002c;
-        public static final int counter_text=0x7f05002b;
-        public static final int decrement_row=0x7f05002a;
-        public static final int enter_zipcode=0x7f050030;
-        public static final int find_local_churches=0x7f050033;
-        public static final int increment_row=0x7f050029;
-        public static final int local_salvation_army=0x7f050032;
-        public static final int navigation_drawer_close=0x7f05003b;
-        public static final int navigation_drawer_open=0x7f05003a;
-        public static final int pattern_organizer=0x7f05002e;
-        public static final int pattern_vizualizer=0x7f050035;
-        public static final int stitch_dictionary=0x7f05002d;
-        public static final int title_activity_find_local_donation=0x7f05002f;
-        public static final int title_activity_stitch_dictionary=0x7f050036;
-        public static final int title_section1=0x7f050037;
-        public static final int title_section2=0x7f050038;
-        public static final int title_section3=0x7f050039;
-        public static final int track_donations=0x7f050034;
+        public static final int count_rows=0x7f050025;
+        public static final int counter_number=0x7f05002a;
+        public static final int counter_text=0x7f050029;
+        public static final int decrement_row=0x7f050028;
+        public static final int email_records=0x7f05003c;
+        public static final int enter_zipcode=0x7f05002e;
+        public static final int find_local_churches=0x7f050031;
+        public static final int increment_row=0x7f050027;
+        public static final int local_salvation_army=0x7f050030;
+        public static final int navigation_drawer_close=0x7f050039;
+        public static final int navigation_drawer_open=0x7f050038;
+        public static final int pattern_organizer=0x7f05002c;
+        public static final int pattern_vizualizer=0x7f050033;
+        public static final int stitch_dictionary=0x7f05002b;
+        public static final int title_activity_find_local_donation=0x7f05002d;
+        public static final int title_activity_stitch_dictionary=0x7f050034;
+        public static final int title_activity_track_donations=0x7f05003b;
+        public static final int title_section1=0x7f050035;
+        public static final int title_section2=0x7f050036;
+        public static final int title_section3=0x7f050037;
+        public static final int track_donations=0x7f050032;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
         public static final int wallet_buy_button_place_holder=0x7f05001f;
-        public static final int zero_counter=0x7f050028;
-        public static final int zipcode=0x7f050031;
+        public static final int zero_counter=0x7f050026;
+        public static final int zipcode=0x7f05002f;
     }
     public static final class style {
         /** 

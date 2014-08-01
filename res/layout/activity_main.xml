@@ -66,6 +66,7 @@
 	    android:layout_alignLeft="@+id/find_local_donation_centers"
 	    android:layout_below="@+id/find_local_donation_centers"
 	    android:layout_marginTop="17dp"
+	    android:onClick="trackDonations"
 	    android:text="@string/track_donations"
 	    android:textSize="25sp" />
 	
