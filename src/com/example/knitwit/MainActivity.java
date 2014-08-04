@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.util.Log;
@@ -19,7 +18,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.drive.Drive;
-import com.google.android.gms.plus.Plus;
 
 public class MainActivity extends Activity implements ConnectionCallbacks, OnConnectionFailedListener {	
 	
@@ -33,14 +31,33 @@ public class MainActivity extends Activity implements ConnectionCallbacks, OnCon
 		
 		//Get Google Drive info
 		super.onCreate(savedInstanceState);
-		mGoogleApiClient = new GoogleApiClient.Builder(this)
-	            .addApi(Drive.API)
-	            .addScope(Drive.SCOPE_FILE)
-	            .addConnectionCallbacks(this)
-	            .addOnConnectionFailedListener(this)
-	            .build();
-		//Attempt to connect to google client
-		onStart();
+		//Check if Google Play service is available, else user needs to install
+		// an update
+		int googleAvailResult = checkPlayServicesAvailable();
+		if(googleAvailResult == ConnectionResult.SUCCESS){
+			Log.i("MainActivity.onCreate", "Google Play services are available");
+			mGoogleApiClient = new GoogleApiClient.Builder(this)
+		            .addApi(Drive.API)
+		            .addScope(Drive.SCOPE_FILE)
+		            .addConnectionCallbacks(this)
+		            .addOnConnectionFailedListener(this)
+		            .build();
+			//Attempt to connect to google client
+			onStart();
+		}
+	}
+	
+	/*
+	 * Check if google play services are available. Show error dialog if not
+	 *  available.
+	 */
+	public int checkPlayServicesAvailable(){
+		int avail = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+		if (avail != ConnectionResult.SUCCESS){
+			Log.e("MainActivity.onCreate", "Google play services not available.");
+			GooglePlayServicesUtil.getErrorDialog(avail, this, 0).show();
+		}
+		return avail;
 	}
 	
 	/*
@@ -62,9 +79,8 @@ public class MainActivity extends Activity implements ConnectionCallbacks, OnCon
 	public void onConnected(Bundle arg0) {
 		// TODO Auto-generated method stub
 		// Connected to Google Play services!
-        // The good stuff goes here.
 		Toast.makeText(MainActivity.this, 
-	              "Successfully connected to Google account", Toast.LENGTH_SHORT).show();
+	              "Successfully connected to Google account", Toast.LENGTH_SHORT).show(); //TODO delete later?
 	}
 
 	@Override
@@ -73,7 +89,6 @@ public class MainActivity extends Activity implements ConnectionCallbacks, OnCon
 		// The connection has been interrupted.
         // Disable any UI components that depend on Google APIs
         // until onConnected() is called.
-
 	}
 	
 	/*
